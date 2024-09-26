@@ -29,6 +29,7 @@ public class CargarFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         mViewModel = new ViewModelProvider(this).get(CargarViewModel.class);
         binding = FragmentCargarBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
@@ -41,6 +42,7 @@ public class CargarFragment extends Fragment {
             }
         });
 
+        //listener al boton de agregar
         binding.btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

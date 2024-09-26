@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
-        
+
         // Configurar el listener para los elementos del menú asi al apretar salir muestra el dialogo
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

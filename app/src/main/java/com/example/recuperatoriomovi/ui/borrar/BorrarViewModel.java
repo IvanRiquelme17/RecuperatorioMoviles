@@ -17,15 +17,18 @@ public class BorrarViewModel extends AndroidViewModel {
     public LiveData<String> toastMessage = _toastMessage;
     private MutableLiveData<Inmueble> inmuebleEncontrado;
 
+
     public BorrarViewModel(@NonNull Application application) {
         super(application);
         inmuebleEncontrado = new MutableLiveData<>();
         inmuebles = MainActivity.inmuebleArrayList != null ? MainActivity.inmuebleArrayList : new ArrayList<>();
     }
 
+
     public LiveData<Inmueble> getMInmueble() {
         return inmuebleEncontrado;
     }
+
 
     public LiveData<Inmueble> buscarInmueble(String codigo){
         if (codigo.trim().isEmpty()){

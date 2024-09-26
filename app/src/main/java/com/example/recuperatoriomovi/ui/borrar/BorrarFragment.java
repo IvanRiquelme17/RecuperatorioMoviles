@@ -43,7 +43,7 @@ public class BorrarFragment extends Fragment {
         mViewModel.getMInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
             public void onChanged(Inmueble inmueble) {
-                //setea los datos a visible
+                //setea los datos a visible y mostrarlos
                 binding.textView8.setVisibility(View.VISIBLE);
                 binding.textView9.setVisibility(View.VISIBLE);
                 binding.textView10.setVisibility(View.VISIBLE);
@@ -58,6 +58,7 @@ public class BorrarFragment extends Fragment {
             }
         });
 
+        //setearle el listener al buscar
         binding.btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,11 +67,13 @@ public class BorrarFragment extends Fragment {
             }
         });
 
+        //llamar al metodo para borrar inmueble
         binding.btnBorrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String codigo = binding.etBuscarCod.getText().toString();
                 mViewModel.eliminarInmueble(codigo);
+                //limpiar vista
                 binding.tvDescEncontrada.setText("");
                 binding.tvCantAmbEncontrada.setText("");
                 binding.tvDireccionEncontrada.setText("");
